@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ross Lauterbach's Portfolio</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1e90ff;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        header img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border: 5px solid white;
+            margin-right: 20px; 
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+        }
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        figure {
+            text-align: center;
+            max-width: 300px;
+        }
+        figure img, figure video {
+            border-radius: 8px;
+            width: 100%;
+            max-width: 300px;
+        }
+        figure figcaption {
+            margin-top: 10px;
+            font-style: italic;
+            color: #555;
+        }
+        figure img:hover, figure video:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="images/rosspic.jpg" alt="Ross Lauterbach Headshot">
+    <div>
+        <h1>Ross Lauterbach</h1>
+        <p>Data Scientist | Statistics Graduate Student | Mathematics Educator</p>
+    </div>
+</header>
+
+<main>
+     <section id="projects">
+        <h2>My Projects</h2>
+        <ul>
+    <li>
+        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb" target="_blank">Code for Basketball Animations</a>
+        <p>Exploring basketball statistics and analytics through engaging visual animations, telling stories about the evolution of the 3pt shot.</p>
+    </li>
+    <li>
+        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb" target="_blank">Harry Potter House Classification Using SVM</a>
+        <p>Using Support Vector Machines to classify Harry Potter houses based on traits, data collected from family and friends.</p>
+    </li>
+</ul>
+<style>
+    ul li p {
+        margin: 5px 0 10px; /* Adjust spacing */
+        font-size: 0.9em;    /* Smaller font size */
+        color: #555;        /* Subdued text color */
+    }
+</style>
+
+
+    </section>
+    
+    <section id="classwork">
+        <h2>My Classwork</h2>
+        <ul>
+            <li><a href="RossDAR.pdf"> College Preparedness in NYC High Schools</a></li>
+            <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BVPandOrbit.ipynb">BVP and Orbit Analysis</a></li>
+            <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/SplinesAndPolynomials.ipynb">Cubic Splines and Polynomial Interpolation</a></li>
+            <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/OLSFromScratch.ipynb">OLS Regression</a></li>
+        </ul>
+    </section>
+   
+
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <figure>
+                <img src="images/p1.png" alt="U.S Census Bureau Seminar">
+                <figcaption>U.S Census Bureau Seminar</figcaption>
+            </figure>
+            <figure>
+                <img src="images/p2.jpg" alt="Poster Presentation, Binghamton University Research Days">
+                <figcaption>Poster Presentation, Binghamton University Research Days</figcaption>
+            </figure>
+            <figure>
+                <img src="images/svm1.png" alt="Harry Potter House Survey SVM Decision Boundary Projection">
+                <figcaption>Harry Potter House Survey SVM Project Decision Boundary Projection</figcaption>
+            </figure>
+            <figure>
+                <video controls>
+                    <source src="images/movie.mp4" type="video/mp4">
+                    <source src="images/movie.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>NBA 3PT Data Animation Project</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am currently pursuing a Master's in Applied Mathematics and Statistics at Hunter College, with a focus on general linear models and numerical methods. I graduated from Binghamton University with a Bachelor's in Mathematics and Data Science with honors in 2023. My academic interests include applications of spatial analysis, ranking, and general linear models to a variety of problems. I now work as a Mathematics Tutor at <a href="https://privateprep.com/">Private Prep</a>, focusing on calculus and statistics education while applying for jobs and PhD programs during the 2025 application cycle. Feel free to <a href="rosslauterbach1@gmail.com">reach out</a> or connect with me on <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.</p>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 Ross Lauterbach</p>
+</footer>
+
+</body>
+</html>
