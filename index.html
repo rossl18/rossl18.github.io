@@ -6,129 +6,167 @@
     <title>Ross Lauterbach's Portfolio</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <style>
         /* Global Styles */
+        :root {
+            --primary-color: #1e90ff;
+            --secondary-color: #87cefa;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --dark-bg: #121212;
+            --dark-text: #f4f4f4;
+        }
+
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
             scroll-behavior: smooth;
+            transition: background-color 0.5s, color 0.5s;
         }
         h2 {
-            border-bottom: 2px solid #1e90ff;
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            font-size: 2em;
-            color: #1e90ff;
+            text-align: center;
+            font-size: 2.2em;
+            color: var(--primary-color);
         }
         a {
-            color: #1e90ff;
+            color: var(--primary-color);
             text-decoration: none;
             transition: color 0.3s ease;
         }
         a:hover {
-            color: #555;
+            color: var(--secondary-color);
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            color: var(--secondary-color);
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(to right, #1e90ff, #87cefa);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
+            animation: gradient 5s infinite alternate;
+        }
+        @keyframes gradient {
+            0% { background-position: 0%; }
+            100% { background-position: 100%; }
         }
         .hero h1 {
+            font-size: 3.5em;
             margin: 0;
-            font-size: 3em;
         }
         .hero p {
-            font-size: 1.5em;
+            font-size: 1.4em;
+            margin-top: 10px;
         }
 
-        /* Header */
-        header {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        header img {
-            border-radius: 50%;
-            width: 130px;
-            height: 130px;
-            margin-right: 20px;
-        }
-        header div {
-            text-align: left;
-        }
-
-        /* Main Content */
+        /* Section Layout */
         main {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 30px auto;
             padding: 20px;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Projects and Classwork */
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 20px;
-        }
-        ul li p {
-            margin: 5px 0;
-            color: #555;
-        }
-
-        /* Gallery */
-        .gallery {
+        /* Project Cards */
+        .card-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
         }
-        figure {
+        .card {
+            background: var(--bg-color);
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 20px;
             max-width: 300px;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        figure img, figure video {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .card h3 {
+            margin: 10px 0;
+        }
+
+        /* Gallery */
+        .gallery img, .gallery video {
             width: 100%;
             border-radius: 8px;
             transition: transform 0.3s ease;
         }
-        figure img:hover, figure video:hover {
+        .gallery img:hover, .gallery video:hover {
             transform: scale(1.05);
         }
 
         /* Footer */
         footer {
-            background-color: #1e90ff;
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
-            padding: 10px 20px;
-            margin-top: 30px;
+            padding: 20px;
         }
-        .footer-links a {
-            color: white;
+        .social-icons i {
             margin: 0 10px;
+            font-size: 1.5em;
             transition: color 0.3s ease;
         }
-        .footer-links a:hover {
-            color: #f9f9f9;
+        .social-icons i:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background-color: var(--dark-bg);
+            color: var(--dark-text);
+        }
+        .dark-mode .card {
+            background: #333;
+            color: white;
         }
     </style>
 </head>
 <body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="#projects">Projects</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#about">About</a>
+    <a href="mailto:rosslauterbach1@gmail.com">Contact</a>
+    <a href="#" onclick="toggleDarkMode()">Dark Mode</a>
+</nav>
 
 <!-- Hero Section -->
 <div class="hero">
@@ -136,61 +174,32 @@
     <p>Data Scientist | Statistics Graduate Student</p>
 </div>
 
-<!-- Header -->
-<header>
-    <img src="images/rosspic.jpg" alt="Ross Lauterbach Headshot">
-    <div>
-        <h2>Welcome to My Portfolio</h2>
-        <p>Explore my projects, coursework, and achievements below!</p>
-    </div>
-</header>
-
 <main>
     <!-- Projects Section -->
     <section id="projects">
         <h2>My Projects</h2>
-        <ul>
-            <li>
-                <a href="RossDAR.pdf">College Preparedness in NYC High Schools</a>
-                <p>Exploring key indicators of college readiness in NYC high schools. Presented at Binghamton University Research Days, 2023.</p>
-            </li>
-            <li>
-                <a href="STAT706_Ross.pdf">Predictive Modeling with NBA Statistics</a>
-                <p>End-to-end machine learning pipeline applied to NBA player stats for predictive analysis.</p>
-            </li>
-            <li>
-                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb">Basketball Animations</a>
-                <p>Visual storytelling with data animations about the 3pt shot evolution.</p>
-            </li>
-            <li>
-                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb">Harry Potter House Classification</a>
-                <p>Support Vector Machines applied to classify Harry Potter houses based on collected survey data.</p>
-            </li>
-        </ul>
+        <div class="card-container">
+            <div class="card">
+                <h3>NYC High Schools</h3>
+                <p>Analyzing college readiness using U.S. Education data.</p>
+            </div>
+            <div class="card">
+                <h3>NBA Predictive Modeling</h3>
+                <p>Machine learning pipeline for player stats.</p>
+            </div>
+            <div class="card">
+                <h3>Basketball Animations</h3>
+                <p>Exploring NBA 3pt shot data through visuals.</p>
+            </div>
+        </div>
     </section>
 
     <!-- Gallery Section -->
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery">
-            <figure>
-                <img src="images/p1.png" alt="U.S Census Bureau Seminar">
-                <figcaption>U.S Census Bureau Seminar</figcaption>
-            </figure>
-            <figure>
-                <img src="images/p2.jpg" alt="Poster Presentation">
-                <figcaption>Binghamton Research Days</figcaption>
-            </figure>
-            <figure>
-                <img src="images/svm1.png" alt="SVM Decision Boundary">
-                <figcaption>Harry Potter SVM Project</figcaption>
-            </figure>
-            <figure>
-                <video controls>
-                    <source src="images/movie.mp4" type="video/mp4">
-                </video>
-                <figcaption>NBA 3PT Animation</figcaption>
-            </figure>
+            <img src="images/p1.png" alt="U.S Census Bureau Seminar">
+            <img src="images/p2.jpg" alt="Poster Presentation">
         </div>
     </section>
 </main>
@@ -198,11 +207,18 @@
 <!-- Footer -->
 <footer>
     <p>&copy; 2024 Ross Lauterbach</p>
-    <div class="footer-links">
-        <a href="mailto:rosslauterbach1@gmail.com">Email</a> | 
-        <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>
+    <div class="social-icons">
+        <a href="mailto:rosslauterbach1@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/"><i class="fab fa-linkedin"></i></a>
     </div>
 </footer>
+
+<script>
+    // Dark Mode Toggle
+    function toggleDarkMode() {
+        document.body.classList.toggle("dark-mode");
+    }
+</script>
 
 </body>
 </html>
