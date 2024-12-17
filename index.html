@@ -18,15 +18,12 @@
             --dark-bg: #121212;
             --dark-text: #f4f4f4;
         }
-
         body {
             font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
-            padding: 0;
             background-color: var(--bg-color);
             color: var(--text-color);
             line-height: 1.6;
-            scroll-behavior: smooth;
             transition: background-color 0.5s, color 0.5s;
         }
         h2 {
@@ -43,56 +40,32 @@
             color: var(--secondary-color);
         }
 
-        /* Navigation Bar */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: var(--primary-color);
-            color: white;
+        /* Header */
+        header {
             text-align: center;
-            padding: 10px 0;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        nav a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* Hero Section */
-        .hero {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            text-align: center;
-            padding: 80px 20px;
-            animation: gradient 5s infinite alternate;
+            padding: 50px 20px;
         }
-        @keyframes gradient {
-            0% { background-position: 0%; }
-            100% { background-position: 100%; }
+        header img {
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            border: 3px solid white;
         }
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0;
+        header h1 {
+            margin: 15px 0 5px;
+            font-size: 2.5em;
         }
-        .hero p {
-            font-size: 1.4em;
-            margin-top: 10px;
+        header p {
+            font-size: 1.2em;
         }
 
-        /* Section Layout */
+        /* Main Content */
         main {
-            max-width: 1100px;
+            max-width: 1000px;
             margin: 30px auto;
             padding: 20px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Project Cards */
@@ -103,27 +76,31 @@
             justify-content: center;
         }
         .card {
-            background: var(--bg-color);
-            border: 1px solid #ddd;
+            background: white;
             border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             padding: 20px;
             max-width: 300px;
-            text-align: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
         }
         .card h3 {
-            margin: 10px 0;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        .card p {
+            font-size: 0.9em;
+            color: #555;
         }
 
         /* Gallery */
         .gallery img, .gallery video {
             width: 100%;
             border-radius: 8px;
+            margin-bottom: 20px;
             transition: transform 0.3s ease;
         }
         .gallery img:hover, .gallery video:hover {
@@ -132,17 +109,19 @@
 
         /* Footer */
         footer {
+            text-align: center;
             background-color: var(--primary-color);
             color: white;
-            text-align: center;
-            padding: 20px;
+            padding: 15px;
+            margin-top: 30px;
         }
-        .social-icons i {
-            margin: 0 10px;
+        .social-icons a {
+            color: white;
             font-size: 1.5em;
+            margin: 0 10px;
             transition: color 0.3s ease;
         }
-        .social-icons i:hover {
+        .social-icons a:hover {
             color: var(--secondary-color);
         }
 
@@ -151,51 +130,52 @@
             background-color: var(--dark-bg);
             color: var(--dark-text);
         }
-        .dark-mode .card {
-            background: #333;
+        body.dark-mode .card, body.dark-mode main {
+            background-color: #333;
             color: white;
+            box-shadow: none;
         }
     </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<nav>
-    <a href="#projects">Projects</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#about">About</a>
-    <a href="mailto:rosslauterbach1@gmail.com">Contact</a>
-    <a href="#" onclick="toggleDarkMode()">Dark Mode</a>
-</nav>
-
-<!-- Hero Section -->
-<div class="hero">
+<!-- Header -->
+<header>
+    <img src="images/rosspic.jpg" alt="Ross Lauterbach Headshot">
     <h1>Ross Lauterbach</h1>
     <p>Data Scientist | Statistics Graduate Student</p>
-</div>
+</header>
 
 <main>
     <!-- Projects Section -->
-    <section id="projects">
+    <section>
         <h2>My Projects</h2>
         <div class="card-container">
             <div class="card">
                 <h3>NYC High Schools</h3>
-                <p>Analyzing college readiness using U.S. Education data.</p>
+                <p>Key indicators of college preparedness in NYC high schools.</p>
+                <a href="RossDAR.pdf">View Project</a>
             </div>
             <div class="card">
                 <h3>NBA Predictive Modeling</h3>
-                <p>Machine learning pipeline for player stats.</p>
+                <p>End-to-end machine learning pipeline for NBA data.</p>
+                <a href="STAT706_Ross.pdf">View Project</a>
             </div>
             <div class="card">
                 <h3>Basketball Animations</h3>
-                <p>Exploring NBA 3pt shot data through visuals.</p>
+                <p>Visualizing the evolution of the 3pt shot.</p>
+                <a href="#">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Harry Potter SVM</h3>
+                <p>SVM for house classification using survey data.</p>
+                <a href="#">View Project</a>
             </div>
         </div>
     </section>
 
     <!-- Gallery Section -->
-    <section id="gallery">
+    <section>
         <h2>Gallery</h2>
         <div class="gallery">
             <img src="images/p1.png" alt="U.S Census Bureau Seminar">
@@ -211,14 +191,14 @@
         <a href="mailto:rosslauterbach1@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/"><i class="fab fa-linkedin"></i></a>
     </div>
+    <button onclick="toggleDarkMode()" style="margin-top: 10px; padding: 5px 10px; cursor: pointer;">Toggle Dark Mode</button>
 </footer>
 
 <script>
-    // Dark Mode Toggle
     function toggleDarkMode() {
-        document.body.classList.toggle("dark-mode");
+        document.body.classList.toggle('dark-mode');
     }
 </script>
-
 </body>
 </html>
+
