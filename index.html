@@ -4,152 +4,172 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ross Lauterbach's Portfolio</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-family: 'Roboto', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
-        }
-        header {
-            background-color: #1e90ff;
-            color: white;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        header img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            border: 5px solid white;
-            margin-right: 20px; 
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-        }
-        main {
-            max-width: 900px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            scroll-behavior: smooth;
         }
         h2 {
-            color: #333;
+            border-bottom: 2px solid #1e90ff;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
             font-size: 2em;
-            margin-bottom: 10px;
+            color: #1e90ff;
         }
         a {
             color: #1e90ff;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         a:hover {
-            text-decoration: underline;
+            color: #555;
         }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(to right, #1e90ff, #87cefa);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .hero h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+        .hero p {
+            font-size: 1.5em;
+        }
+
+        /* Header */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header img {
+            border-radius: 50%;
+            width: 130px;
+            height: 130px;
+            margin-right: 20px;
+        }
+        header div {
+            text-align: left;
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Projects and Classwork */
         ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
         }
         ul li {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
+        ul li p {
+            margin: 5px 0;
+            color: #555;
+        }
+
+        /* Gallery */
         .gallery {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: space-around;
-            margin-top: 20px;
+            justify-content: center;
         }
         figure {
-            text-align: center;
             max-width: 300px;
+            text-align: center;
         }
         figure img, figure video {
-            border-radius: 8px;
             width: 100%;
-            max-width: 300px;
-        }
-        figure figcaption {
-            margin-top: 10px;
-            font-style: italic;
-            color: #555;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
         figure img:hover, figure video:hover {
             transform: scale(1.05);
-            transition: transform 0.3s ease;
         }
+
+        /* Footer */
         footer {
+            background-color: #1e90ff;
+            color: white;
             text-align: center;
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #666;
+            padding: 10px 20px;
+            margin-top: 30px;
+        }
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+        .footer-links a:hover {
+            color: #f9f9f9;
         }
     </style>
 </head>
 <body>
 
+<!-- Hero Section -->
+<div class="hero">
+    <h1>Ross Lauterbach</h1>
+    <p>Data Scientist | Statistics Graduate Student</p>
+</div>
+
+<!-- Header -->
 <header>
     <img src="images/rosspic.jpg" alt="Ross Lauterbach Headshot">
     <div>
-        <h1>Ross Lauterbach</h1>
-        <p>Data Scientist and Statistics Graduate Student</p>
+        <h2>Welcome to My Portfolio</h2>
+        <p>Explore my projects, coursework, and achievements below!</p>
     </div>
 </header>
 
 <main>
-     <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects">
         <h2>My Projects</h2>
         <ul>
             <li>
-                <a href="RossDAR.pdf"> College Preparedness in NYC High Schools</a>
-                <p>This project aims to uncover the most significant indicators of college preparedness in NYC using data from the U.S. Department of Education. Presented at Binghamton University Research Days, 2023.</p>
+                <a href="RossDAR.pdf">College Preparedness in NYC High Schools</a>
+                <p>Exploring key indicators of college readiness in NYC high schools. Presented at Binghamton University Research Days, 2023.</p>
             </li>
-
             <li>
-                <a href="STAT706_Ross.pdf"> Predictive Modeling with NBA Statistics</a>
-                <p>Presentation on the applications of predictive modeling using NBA player data from Kaggle. Constructed a machine learning pipeline including data cleaning, exploratory data analysis, model selection, model validation, and diagnostics.</p>
+                <a href="STAT706_Ross.pdf">Predictive Modeling with NBA Statistics</a>
+                <p>End-to-end machine learning pipeline applied to NBA player stats for predictive analysis.</p>
             </li>
-    <li>
-        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb" target="_blank">Code for Basketball Animations</a>
-        <p>Exploring basketball statistics and analytics through engaging visual animations, telling stories about the evolution of the 3pt shot.</p>
-    </li>
-    <li>
-        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb" target="_blank">Harry Potter House Classification Using SVM</a>
-        <p>Using Support Vector Machines to classify Harry Potter houses based on traits, data collected from family and friends.</p>
-    </li>
-</ul>
-<style>
-    ul li p {
-        margin: 5px 0 10px; /* Adjust spacing */
-        font-size: 0.9em;    /* Smaller font size */
-        color: #555;        /* Subdued text color */
-    }
-</style>
-
-
-    </section>
-    
-    <section id="classwork">
-        <h2>My Classwork</h2>
-        <ul>
-            <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BVPandOrbit.ipynb">BVP and Orbit Analysis</a></li>
-            <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/SplinesAndPolynomials.ipynb">Cubic Splines and Polynomial Interpolation</a></li>
-            <!-- <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/OLSFromScratch.ipynb">OLS Regression</a></li> --!>
+            <li>
+                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb">Basketball Animations</a>
+                <p>Visual storytelling with data animations about the 3pt shot evolution.</p>
+            </li>
+            <li>
+                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb">Harry Potter House Classification</a>
+                <p>Support Vector Machines applied to classify Harry Potter houses based on collected survey data.</p>
+            </li>
         </ul>
     </section>
-   
 
+    <!-- Gallery Section -->
     <section id="gallery">
         <h2>Gallery</h2>
         <div class="gallery">
@@ -158,32 +178,30 @@
                 <figcaption>U.S Census Bureau Seminar</figcaption>
             </figure>
             <figure>
-                <img src="images/p2.jpg" alt="Poster Presentation, Binghamton University Research Days">
-                <figcaption>Poster Presentation, Binghamton University Research Days</figcaption>
+                <img src="images/p2.jpg" alt="Poster Presentation">
+                <figcaption>Binghamton Research Days</figcaption>
             </figure>
             <figure>
-                <img src="images/svm1.png" alt="Harry Potter House Survey SVM Decision Boundary Projection">
-                <figcaption>Harry Potter House Survey SVM Project Decision Boundary Projection</figcaption>
+                <img src="images/svm1.png" alt="SVM Decision Boundary">
+                <figcaption>Harry Potter SVM Project</figcaption>
             </figure>
             <figure>
                 <video controls>
                     <source src="images/movie.mp4" type="video/mp4">
-                    <source src="images/movie.webm" type="video/webm">
-                    Your browser does not support the video tag.
                 </video>
-                <figcaption>NBA 3PT Data Animation Project</figcaption>
+                <figcaption>NBA 3PT Animation</figcaption>
             </figure>
         </div>
     </section>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am currently pursuing a Master's in Applied Mathematics and Statistics at Hunter College, with a focus on general linear models and numerical methods. I graduated from Binghamton University with a Bachelor's in Mathematics and Data Science with honors in 2023. My academic interests include applications of spatial analysis, ranking, and general linear models to a variety of problems. I now work as a Mathematics Tutor at <a href="https://privateprep.com/">Private Prep</a>, focusing on calculus and statistics education while applying for jobs and PhD programs during the 2025 application cycle. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.</p>
-    </section>
 </main>
 
+<!-- Footer -->
 <footer>
     <p>&copy; 2024 Ross Lauterbach</p>
+    <div class="footer-links">
+        <a href="mailto:rosslauterbach1@gmail.com">Email</a> | 
+        <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>
+    </div>
 </footer>
 
 </body>
