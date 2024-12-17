@@ -27,7 +27,7 @@
             height: 150px;
             object-fit: cover;
             border: 5px solid white;
-            margin-right: 20px; 
+            margin-right: 20px;
         }
         header h1 {
             margin: 0;
@@ -38,7 +38,7 @@
             margin-top: 10px;
         }
         main {
-            max-width: 900px;
+            max-width: 1100px;
             margin: 30px auto;
             padding: 20px;
             background-color: white;
@@ -48,46 +48,46 @@
         h2 {
             color: #333;
             font-size: 2em;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
+            text-align: center;
         }
-        a {
-            color: #1e90ff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 10px;
-        }
-        .gallery {
+        .card-container {
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: space-around;
-            margin-top: 20px;
+            justify-content: space-between;
         }
-        figure {
-            text-align: center;
-            max-width: 300px;
-        }
-        figure img, figure video {
+        .card {
+            flex: 1 1 calc(30% - 20px); /* Ensures 3 cards per row */
+            background-color: #fafafa;
+            border: 1px solid #ddd;
             border-radius: 8px;
-            width: 100%;
-            max-width: 300px;
+            padding: 15px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 200px;
+            box-sizing: border-box;
         }
-        figure figcaption {
-            margin-top: 10px;
-            font-style: italic;
+        .card h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: #1e90ff;
+        }
+        .card p {
+            font-size: 0.9em;
             color: #555;
+            margin-bottom: 15px;
+            flex-grow: 1;
         }
-        figure img:hover, figure video:hover {
-            transform: scale(1.05);
-            transition: transform 0.3s ease;
+        .card a {
+            text-decoration: none;
+            color: #1e90ff;
+            font-weight: bold;
+        }
+        .card a:hover {
+            text-decoration: underline;
         }
         footer {
             text-align: center;
@@ -108,77 +108,48 @@
 </header>
 
 <main>
-     <section id="projects">
+    <!-- Projects Section -->
+    <section id="projects">
         <h2>My Projects</h2>
-        <ul>
-            <li>
-                <a href="RossDAR.pdf"> College Preparedness in NYC High Schools</a>
-                <p>This project aims to uncover the most significant indicators of college preparedness in NYC using data from the U.S. Department of Education. Presented at Binghamton University Research Days, 2023.</p>
-            </li>
-
-            <li>
-                <a href="STAT706_Ross.pdf"> Predictive Modeling with NBA Statistics</a>
-                <p>Presentation on the applications of predictive modeling using NBA player data from Kaggle. Constructed a machine learning pipeline including data cleaning, exploratory data analysis, model selection, model validation, and diagnostics.</p>
-            </li>
-    <li>
-        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb" target="_blank">Code for Basketball Animations</a>
-        <p>Exploring basketball statistics and analytics through engaging visual animations, telling stories about the evolution of the 3pt shot.</p>
-    </li>
-    <li>
-        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb" target="_blank">Harry Potter House Classification Using SVM</a>
-        <p>Using Support Vector Machines to classify Harry Potter houses based on traits, data collected from family and friends.</p>
-    </li>
-</ul>
-<style>
-    ul li p {
-        margin: 5px 0 10px; /* Adjust spacing */
-        font-size: 0.9em;    /* Smaller font size */
-        color: #555;        /* Subdued text color */
-    }
-</style>
-
-
-    </section>
-    
-    <section id="classwork">
-        <h2>My Classwork</h2>
-        <ul>
-            <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BVPandOrbit.ipynb">BVP and Orbit Analysis</a></li>
-            <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/SplinesAndPolynomials.ipynb">Cubic Splines and Polynomial Interpolation</a></li>
-            <!-- <li><a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/OLSFromScratch.ipynb">OLS Regression</a></li> --!>
-        </ul>
-    </section>
-   
-
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <figure>
-                <img src="images/p1.png" alt="U.S Census Bureau Seminar">
-                <figcaption>U.S Census Bureau Seminar</figcaption>
-            </figure>
-            <figure>
-                <img src="images/p2.jpg" alt="Poster Presentation, Binghamton University Research Days">
-                <figcaption>Poster Presentation, Binghamton University Research Days</figcaption>
-            </figure>
-            <figure>
-                <img src="images/svm1.png" alt="Harry Potter House Survey SVM Decision Boundary Projection">
-                <figcaption>Harry Potter House Survey SVM Project Decision Boundary Projection</figcaption>
-            </figure>
-            <figure>
-                <video controls>
-                    <source src="images/movie.mp4" type="video/mp4">
-                    <source src="images/movie.webm" type="video/webm">
-                    Your browser does not support the video tag.
-                </video>
-                <figcaption>NBA 3PT Data Animation Project</figcaption>
-            </figure>
+        <div class="card-container">
+            <div class="card">
+                <h3>College Preparedness in NYC High Schools</h3>
+                <p>This project uncovers the most significant indicators of college preparedness in NYC using data from the U.S. Department of Education.</p>
+                <a href="RossDAR.pdf">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Predictive Modeling with NBA Statistics</h3>
+                <p>Built a machine learning pipeline for NBA player stats, covering cleaning, EDA, model selection, and validation.</p>
+                <a href="STAT706_Ross.pdf">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Code for Basketball Animations</h3>
+                <p>Explored basketball analytics and visualized the evolution of the 3pt shot through animations.</p>
+                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb" target="_blank">View Project</a>
+            </div>
+            <div class="card">
+                <h3>Harry Potter House Classification Using SVM</h3>
+                <p>Used Support Vector Machines to classify Harry Potter houses based on family and friend survey data.</p>
+                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb" target="_blank">View Project</a>
+            </div>
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am currently pursuing a Master's in Applied Mathematics and Statistics at Hunter College, with a focus on general linear models and numerical methods. I graduated from Binghamton University with a Bachelor's in Mathematics and Data Science with honors in 2023. My academic interests include applications of spatial analysis, ranking, and general linear models to a variety of problems. I now work as a Mathematics Tutor at <a href="https://privateprep.com/">Private Prep</a>, focusing on calculus and statistics education while applying for jobs and PhD programs during the 2025 application cycle. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.</p>
+    <!-- Classwork Section -->
+    <section id="classwork">
+        <h2>My Classwork</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>BVP and Orbit Analysis</h3>
+                <p>Analyzed boundary value problems and orbit trajectories using numerical methods.</p>
+                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BVPandOrbit.ipynb" target="_blank">View Classwork</a>
+            </div>
+            <div class="card">
+                <h3>Cubic Splines and Polynomial Interpolation</h3>
+                <p>Explored spline and polynomial interpolation techniques with practical applications.</p>
+                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/SplinesAndPolynomials.ipynb" target="_blank">View Classwork</a>
+            </div>
+        </div>
     </section>
 </main>
 
@@ -188,4 +159,5 @@
 
 </body>
 </html>
+
 
