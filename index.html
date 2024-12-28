@@ -50,6 +50,7 @@
             font-size: 2em;
             margin-bottom: 10px;
         }
+        
         a {
             color: #1e90ff;
             text-decoration: none;
@@ -71,6 +72,32 @@
             justify-content: space-around;
             margin-top: 20px;
         }
+        /* Skills Section Styling */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skill-card {
+    background-color: #f3f4f6; /* Light gray background */
+    border: 1px solid #ddd;    /* Subtle border */
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    background-color: #e2e8f0; /* Slightly darker background on hover */
+    cursor: pointer;
+}
+
         figure {
             text-align: center;
             max-width: 300px;
@@ -107,6 +134,32 @@
     </div>
 </header>
 
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+        I am currently pursuing a Master's in Applied Mathematics and Statistics at Hunter College, with a focus on general linear models and numerical methods. 
+        I graduated from Binghamton University with a Bachelor's in Mathematics and Data Science with honors in 2023. My academic interests include applications of 
+        ranking, survey methodology, advanced statistical learning, causal inference, and general linear models to a variety of problems. 
+        I now work as a Mathematics Tutor at <a href="https://privateprep.com/">Private Prep</a>, focusing on calculus and statistics education while applying for 
+        jobs and PhD programs during the 2025 application cycle. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on 
+        <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.
+    </p>
+
+    <!-- Skills Section -->
+    <h3>Skills</h3>
+    <div class="skills-grid">
+        <div class="skill-card">Python</div>
+        <div class="skill-card">R</div>
+        <div class="skill-card">SQL</div>
+        <div class="skill-card">Machine Learning</div>
+        <div class="skill-card">Data Visualization</div>
+        <div class="skill-card">General Linear Models</div>
+        <div class="skill-card">Causal Inference</div>
+        <div class="skill-card">Survey Methodology</div>
+    </div>
+</section>
+
+    
 <main>
      <section id="projects">
         <h2>My Projects and Highlights</h2>
@@ -186,10 +239,7 @@
         </div>
     </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am currently pursuing a Master's in Applied Mathematics and Statistics at Hunter College, with a focus on general linear models and numerical methods. I graduated from Binghamton University with a Bachelor's in Mathematics and Data Science with honors in 2023. My academic interests include applications of spatial analysis, ranking, and general linear models to a variety of problems. I now work as a Mathematics Tutor at <a href="https://privateprep.com/">Private Prep</a>, focusing on calculus and statistics education while applying for jobs and PhD programs during the 2025 application cycle. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.</p>
-    </section>
+    
 </main>
 
 <footer>
