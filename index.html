@@ -72,17 +72,25 @@
             justify-content: space-around;
             margin-top: 20px;
         }
-        /* Skills Section Styling */
+       /* Container Styling */
+.container {
+    max-width: 800px; /* Set a maximum width */
+    margin: 0 auto; /* Center the content */
+    padding: 20px; /* Add space around the content */
+}
+
+/* Adjust the Skills Section */
 .skills-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    justify-content: center; /* Center the skills grid */
     margin-top: 15px;
 }
 
 .skill-card {
     background-color: #f3f4f6; /* Light gray background */
-    border: 1px solid #ddd;    /* Subtle border */
+    border: 1px solid #ddd; /* Subtle border */
     border-radius: 5px;
     padding: 8px 12px;
     font-size: 0.9rem;
@@ -97,6 +105,7 @@
     background-color: #e2e8f0; /* Slightly darker background on hover */
     cursor: pointer;
 }
+
 
         figure {
             text-align: center;
@@ -135,29 +144,35 @@
 </header>
 
   <section id="about">
-    <h2>About Me</h2>
-    <p>
-        I am currently pursuing a Master's in Applied Mathematics and Statistics at Hunter College, with a focus on general linear models and numerical methods. 
-        I graduated from Binghamton University with a Bachelor's in Mathematics and Data Science with honors in 2023. My academic interests include applications of 
-        ranking, survey methodology, advanced statistical learning, causal inference, and general linear models to a variety of problems. 
-        I now work as a Mathematics Tutor at <a href="https://privateprep.com/">Private Prep</a>, focusing on calculus and statistics education while applying for 
-        jobs and PhD programs during the 2025 application cycle. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on 
-        <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.
-    </p>
+    <div class="container">
+        <h2>About Me</h2>
+        <p>
+            I am currently pursuing a Master's in Applied Mathematics and Statistics at Hunter College, with a focus on general linear models and numerical methods. 
+            I graduated from Binghamton University with a Bachelor's in Mathematics and Data Science with honors in 2023. My academic interests include applications of 
+            ranking, survey methodology, advanced statistical learning, causal inference, and general linear models to a variety of problems. 
+            I now work as a Mathematics Tutor at <a href="https://privateprep.com/">Private Prep</a>, focusing on calculus and statistics education while applying for 
+            jobs and PhD programs during the 2025 application cycle. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on 
+            <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.
+        </p>
 
-    <!-- Skills Section -->
-    <h3>Skills</h3>
-    <div class="skills-grid">
-        <div class="skill-card">Python</div>
-        <div class="skill-card">R</div>
-        <div class="skill-card">SQL</div>
-        <div class="skill-card">Machine Learning</div>
-        <div class="skill-card">Data Visualization</div>
-        <div class="skill-card">General Linear Models</div>
-        <div class="skill-card">Causal Inference</div>
-        <div class="skill-card">Survey Methodology</div>
+        <!-- Skills Section -->
+        <h3>Skills</h3>
+        <div class="skills-grid">
+            <div class="skill-card">Machine Learning</div>
+            <div class="skill-card">Data Visualization</div>
+            <div class="skill-card">General Linear Models</div>
+            <div class="skill-card">Causal Inference</div>
+            <div class="skill-card">Survey Methodology</div>
+            <div class="skill-card">Statistical Programming</div>
+            <div class="skill-card">Survival Analysis</div>
+            <div class="skill-card">Numerical and Monte Carlo Methods</div>
+            <div class="skill-card">Database Management</div>
+            <div class="skill-card">Mathematical Statistics</div>
+            <div class="skill-card">Cloud Computing</div>
+        </div>
     </div>
 </section>
+
 
     
 <main>
