@@ -22,6 +22,7 @@
             align-items: center;
             justify-content: center;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added subtle shadow to header */
         }
         header img {
             border-radius: 50%;
@@ -112,9 +113,10 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted min-width for more cards */
             gap: 12px;
             margin-top: 20px;
+            justify-content: center; /* Center items if they don't fill a full row */
         }
 
         .skill-card {
@@ -122,7 +124,7 @@
             border: 1px solid #cce7ee;
             border-radius: 6px;
             padding: 12px 15px;
-            font-size: 1rem;
+            font-size: 0.95rem; /* Slightly smaller font for more cards */
             color: #0056b3;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
@@ -236,8 +238,11 @@
             <h3>Skills</h3>
             <div class="skills-grid">
                 <div class="skill-card">Machine Learning</div>
-                <div class="skill-card">Data Visualization</div>
-                <div class="skill-card">Statistical Modeling</div>
+                <div class="skill-card">Data Visualization (PowerBI, Tableau)</div>
+                <div class="skill-card">Time Series Analysis</div>
+                <div class="skill-card">General Linear Models</div>
+                <div class="skill-card">Classification Methods</div>
+                <div class="skill-card">A/B Testing</div>
                 <div class="skill-card">Survey Methodology</div>
                 <div class="skill-card">Statistical Programming (R, Python)</div>
                 <div class="skill-card">Numerical Methods</div>
@@ -313,10 +318,6 @@
             <figure>
                 <img src="images/p2.jpg" alt="Poster Presentation, Binghamton University Research Days">
                 <figcaption>Poster Presentation at Binghamton University Research Days</figcaption>
-            </figure>
-            <figure>
-                <img src="images/svm1.png" alt="Harry Potter House Survey SVM Decision Boundary Projection">
-                <figcaption>SVM Decision Boundary Projection for Harry Potter House Classification</figcaption>
             </figure>
             <figure>
                 <video controls>
