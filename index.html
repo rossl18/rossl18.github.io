@@ -1,333 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ross Lauterbach | Data Scientist & Statistician</title>
-    <style>
-        body {
-            font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            color: #343a40;
-            line-height: 1.6;
-        }
-
-        header {
-            background-color: #007bff;
-            color: white;
-            padding: 30px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Added subtle shadow to header */
-        }
-        header img {
-            border-radius: 50%;
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border: 4px solid white;
-            margin-right: 25px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.8em;
-            font-weight: 700;
-        }
-        header p {
-            font-size: 1.3em;
-            margin-top: 8px;
-            opacity: 0.95;
-        }
-
-        main {
-            max-width: 960px;
-            margin: 40px auto;
-            padding: 30px;
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        h2 {
-            color: #212529;
-            font-size: 2.2em;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #e9ecef;
-            padding-bottom: 10px;
-            font-weight: 600;
-        }
-        h3 {
-            color: #343a40;
-            font-size: 1.6em;
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-        
-        a {
-            color: #007bff;
-            text-decoration: none;
-            transition: color 0.2s ease-in-out;
-        }
-        a:hover {
-            color: #0056b3;
-            text-decoration: underline;
-        }
-
-        ul {
-            list-style-type: none;
-            padding: 0;
-            margin-bottom: 30px;
-        }
-        ul li {
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 1px dashed #e9ecef;
-        }
-        ul li:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        ul li a {
-            font-size: 1.2em;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-        }
-        ul li p {
-            margin: 0;
-            font-size: 1em;
-            color: #5a6268;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 0;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* Adjusted min-width for more cards */
-            gap: 12px;
-            margin-top: 20px;
-            justify-content: center; /* Center items if they don't fill a full row */
-        }
-
-        .skill-card {
-            background-color: #e0f2f7;
-            border: 1px solid #cce7ee;
-            border-radius: 6px;
-            padding: 12px 15px;
-            font-size: 0.95rem; /* Slightly smaller font for more cards */
-            color: #0056b3;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease, background-color 0.2s ease;
-            font-weight: 500;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-3px);
-            background-color: #cce7f2;
-            cursor: pointer;
-        }
-
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin-top: 25px;
-        }
-        figure {
-            margin: 0;
-            text-align: center;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-            padding: 15px;
-            transition: transform 0.2s ease;
-        }
-        figure:hover {
-            transform: translateY(-5px);
-        }
-        figure img, figure video {
-            border-radius: 6px;
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            display: block;
-            margin-bottom: 10px;
-        }
-        figure figcaption {
-            margin-top: 5px;
-            font-style: normal;
-            color: #495057;
-            font-size: 0.95em;
-            font-weight: 500;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px;
-            font-size: 0.9em;
-            color: #6c757d;
-            background-color: #e9ecef;
-            border-top: 1px solid #dee2e6;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                padding: 20px;
-            }
-            header img {
-                margin-right: 0;
-                margin-bottom: 15px;
-            }
-            header h1 {
-                font-size: 2.2em;
-            }
-            header p {
-                font-size: 1.1em;
-            }
-            main {
-                margin: 20px auto;
-                padding: 20px;
-            }
-            h2 {
-                font-size: 1.8em;
-            }
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            }
-            .gallery {
-                grid-template-columns: 1fr;
-            }
-            figure img, figure video {
-                height: auto;
-            }
-        }
-    </style>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ross Lauterbach | Data Scientist & Statistician</title>
+  <link rel="icon" type="image/svg+xml" href="vite.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    :root {
+      --primary: #007bff;
+      --primary-dark: #0056b3;
+      --bg: #f8f9fa;
+      --card-bg: #fff;
+      --text: #343a40;
+      --muted: #6c757d;
+      --border: #e9ecef;
+      --shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Inter', Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+    nav {
+      background: var(--card-bg);
+      box-shadow: var(--shadow);
+      padding: 0.5rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--primary);
+    }
+    .hero {
+      background: linear-gradient(120deg, var(--primary) 0%, #4f8cff 100%);
+      color: #fff;
+      padding: 60px 0 40px 0;
+      text-align: center;
+      position: relative;
+    }
+    .hero img {
+      border-radius: 50%;
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border: 5px solid #fff;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+      margin-bottom: 18px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2.7em;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+    .hero p {
+      font-size: 1.3em;
+      margin: 10px 0 18px 0;
+      opacity: 0.95;
+    }
+    .hero .socials {
+      margin-top: 10px;
+    }
+    .hero .socials a {
+      color: #fff;
+      margin: 0 10px;
+      font-size: 1.5em;
+      transition: color 0.2s;
+    }
+    .hero .socials a:hover {
+      color: #d1eaff;
+    }
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 2rem;
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      font-size: 2em;
+      margin-bottom: 18px;
+      color: var(--primary-dark);
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 6px;
+      font-weight: 700;
+    }
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .skill-card {
+      background: #e0f2f7;
+      border: 1px solid #cce7ee;
+      border-radius: 6px;
+      padding: 10px 18px;
+      font-size: 1em;
+      color: var(--primary-dark);
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.07);
+      transition: background 0.2s, transform 0.2s;
+    }
+    .skill-card:hover {
+      background: #cce7f2;
+      transform: translateY(-2px);
+    }
+    .projects-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 22px;
+      margin-top: 20px;
+    }
+    .project-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 22px 18px 16px 18px;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.10);
+    }
+    .project-card a {
+      color: var(--primary);
+      font-size: 1.15em;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .project-card a:hover {
+      color: var(--primary-dark);
+      text-decoration: underline;
+    }
+    .project-card p {
+      color: var(--muted);
+      font-size: 1em;
+      margin: 0;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 25px;
+    }
+    figure {
+      margin: 0;
+      text-align: center;
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      padding: 15px;
+      transition: transform 0.2s;
+    }
+    figure:hover {
+      transform: translateY(-5px);
+    }
+    figure img, figure video {
+      border-radius: 6px;
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 10px;
+    }
+    figure figcaption {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 0.97em;
+      font-weight: 500;
+    }
+    footer {
+      text-align: center;
+      margin-top: 60px;
+      padding: 22px 0;
+      font-size: 1em;
+      color: var(--muted);
+      background: var(--border);
+      border-top: 1px solid var(--border);
+    }
+    @media (max-width: 800px) {
+      main { padding: 0 1rem; }
+      nav .container { padding: 0 1rem; }
+    }
+    @media (max-width: 600px) {
+      .hero img { width: 90px; height: 90px; }
+      .projects-list { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <img src="images/rosspic.jpg" alt="Ross Lauterbach Headshot">
-    <div>
-        <h1>Ross Lauterbach</h1>
-        <p>Data Scientist & Statistician</p>
-    </div>
-</header>
+<nav>
+  <div class="container">
+    <div><b>Ross Lauterbach</b></div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="mailto:rosslauterbach1@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
+      <li><a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+    </ul>
+  </div>
+</nav>
+
+<section class="hero">
+  <img src="images/rosspic.jpg" alt="Ross Lauterbach Headshot">
+  <h1>Ross Lauterbach</h1>
+  <p>Data Scientist & Statistician</p>
+  <div class="socials">
+    <a href="mailto:rosslauterbach1@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  </div>
+</section>
 
 <main>
-    <section id="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I hold a <strong>Master's Degree in Statistics</strong> from Hunter College and a <strong>Bachelor's Degree in Mathematics and Data Science with honors</strong> from Binghamton University. My academic interests are centered on the applications of <strong>ranking</strong>, <strong>survey methodology</strong>, <strong>advanced statistical learning</strong>, <strong>causal inference</strong>, and <strong>general linear models</strong> for various social science problems. I'm now eager to apply my skills professionally. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.
-            </p>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I hold a <strong>Master's Degree in Statistics</strong> from Hunter College and a <strong>Bachelor's Degree in Mathematics and Data Science with honors</strong> from Binghamton University. My academic interests are centered on the applications of <strong>ranking</strong>, <strong>survey methodology</strong>, <strong>advanced statistical learning</strong>, <strong>causal inference</strong>, and <strong>general linear models</strong> for various social science problems. I'm now eager to apply my skills professionally. Feel free to <a href="mailto:rosslauterbach1@gmail.com">reach out</a> or connect with me on <a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/">LinkedIn</a>.
+    </p>
+  </section>
 
-            <h3>Skills</h3>
-            <div class="skills-grid">
-                <div class="skill-card">Machine Learning</div>
-                <div class="skill-card">Data Visualization (PowerBI, Tableau)</div>
-                <div class="skill-card">Time Series Analysis</div>
-                <div class="skill-card">General Linear Models</div>
-                <div class="skill-card">Classification Methods</div>
-                <div class="skill-card">A/B Testing</div>
-                <div class="skill-card">Survey Methodology</div>
-                <div class="skill-card">Statistical Programming (R, Python)</div>
-                <div class="skill-card">Numerical Methods</div>
-                <div class="skill-card">Database Management (SQL)</div>
-                <div class="skill-card">Mathematical Statistics</div>
-                <div class="skill-card">Cloud Platforms (AWS, GCP)</div>
-            </div>
-        </div>
-    </section>
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">Machine Learning</div>
+      <div class="skill-card">Data Visualization (PowerBI, Tableau)</div>
+      <div class="skill-card">Time Series Analysis</div>
+      <div class="skill-card">General Linear Models</div>
+      <div class="skill-card">Classification Methods</div>
+      <div class="skill-card">A/B Testing</div>
+      <div class="skill-card">Survey Methodology</div>
+      <div class="skill-card">Statistical Programming (R, Python)</div>
+      <div class="skill-card">Numerical Methods</div>
+      <div class="skill-card">Database Management (SQL)</div>
+      <div class="skill-card">Mathematical Statistics</div>
+      <div class="skill-card">Cloud Platforms (AWS, GCP)</div>
+    </div>
+  </section>
 
-    <section id="projects">
-        <h2>Selected Projects & Research</h2>
-        <ul>
-            <li>
-                <a href="ProceedingsRoss25.pdf">Quantifying and Comparing NBA Player Career Momentum Using Statistical Methods</a>
-                <p>Explored the often-cited concept of "momentum" in the NBA by developing a <strong>statistical framework</strong> to capture and quantify player performance trajectories. This research introduces methods to identify sustained periods of elevated or diminished performance and measure associated uncertainty, with a deep dive into calculation and modeling techniques.</p>
-            </li>
-            <li>
-                <a href="RossDAR.pdf">College Preparedness in NYC High Schools: A Data-Driven Analysis</a>
-                <p>Analyzed data from the U.S. Department of Education to identify <strong>significant indicators of college preparedness</strong> within NYC high schools. This project was presented at Binghamton University Research Days, 2023.</p>
-            </li>
-             <li>
-                <a href="https://rossl18.github.io/ml-data-explorer/">ML Data Explorer Webpage</a>
-                <p>Created an interactive data exploration website to introduce students to data exploration and basic ML modeling.</p>
-            </li>
-            <li>
-                <a href="STAT706_Ross.pdf">Predictive Modeling with NBA Statistics</a>
-                <p>Presented a comprehensive machine learning pipeline for <strong>predictive modeling using NBA player data</strong>, encompassing data cleaning, exploratory data analysis, model selection, validation, and diagnostics.</p>
-            </li>
-            <li>
-                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/20b4b4219a77586cf76a9ada1d77682e5363df2d/SyllabusClassifier.ipynb">Syllabus Classification Using TF-IDF and Machine Learning</a>
-                <p>Developed a program capable of classifying syllabi as authentic or fake. This project utilized <strong>TF-IDF vectorization</strong> and employed <strong>Naive Bayes, Random Forest, and Logistic Regression classifiers</strong> for robust classification.</p>
-            </li>
-            <li>
-                <a href="https://rossl18.github.io/StatsDemo/">Interactive Statistical Theory Demonstrations</a>
-                <p>Designed and built a website using <strong>JavaScript and HTML</strong> that allows users to explore fundamental statistical theories through <strong>interactive visualizations</strong>, enhancing understanding of complex concepts.</p>
-            </li>
-            <li>
-                <a href="https://rossl18.github.io/NYCJobs/">Curated Database of NYC Company Career Sites</a>
-                <p>Created a GitHub Pages site listing major NYC companies with direct links to their technology career pages, serving as a valuable resource for job seekers.</p>
-            </li>
-            <li>
-                <a href="https://github.com/codingitforward/fellowship2024">Coding it Forward Fellowship: U.S. Census Bureau Project Overview</a>
-                <p>Repository providing an overview of projects by 2024 Coding it Forward Fellows, including a description of my work at the U.S. Census Bureau. (Note: My specific presentation remains confidential).</p>
-            </li>
-            <li>
-                <a href="https://www.linkedin.com/posts/fleishman-career_read-to-learn-howbinghamton-universityalum-activity-7135668537842364416--X0t/?trk=public_profile_like_view">Fleishman Center for Career and Professional Development Interview</a>
-                <p>Interviewed by the Fleishman Center for Career and Professional Development, discussing my <strong>networking experiences</strong> and my fellowship at the National Museum of Mathematics.</p>
-            </li>
-            <li>
-                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb" target="_blank">Basketball Analytics: Visualizing the Evolution of the 3-Point Shot</a>
-                <p>Explored basketball statistics and analytics through <strong>engaging visual animations</strong>, illustrating key trends such as the evolution of the 3-point shot in the NBA.</p>
-            </li>
-            <li>
-                <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb" target="_blank">Harry Potter House Classification Using Support Vector Machines</a>
-                <p>Applied <strong>Support Vector Machines (SVMs)</strong> to classify Harry Potter houses based on collected trait data, showcasing practical application of machine learning techniques.</p>
-            </li>
-        </ul>
-    </section>
+  <section id="projects">
+    <h2>Selected Projects & Research</h2>
+    <div class="projects-list">
+      <div class="project-card">
+        <a href="ProceedingsRoss25.pdf">Quantifying and Comparing NBA Player Career Momentum Using Statistical Methods</a>
+        <p>Developed a <strong>statistical framework</strong> to capture and quantify NBA player performance momentum, introducing methods to identify sustained periods of elevated or diminished performance.</p>
+      </div>
+      <div class="project-card">
+        <a href="RossDAR.pdf">College Preparedness in NYC High Schools: A Data-Driven Analysis</a>
+        <p>Analyzed U.S. Department of Education data to identify <strong>significant indicators of college preparedness</strong> within NYC high schools. Presented at Binghamton University Research Days, 2023.</p>
+      </div>
+      <div class="project-card">
+        <a href="https://rossl18.github.io/ml-data-explorer/">ML Data Explorer Webpage</a>
+        <p>Created an interactive data exploration website to introduce students to data exploration and basic ML modeling.</p>
+      </div>
+      <div class="project-card">
+        <a href="STAT706_Ross.pdf">Predictive Modeling with NBA Statistics</a>
+        <p>Presented a comprehensive machine learning pipeline for <strong>predictive modeling using NBA player data</strong>, including data cleaning, EDA, model selection, validation, and diagnostics.</p>
+      </div>
+      <div class="project-card">
+        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/20b4b4219a77586cf76a9ada1d77682e5363df2d/SyllabusClassifier.ipynb">Syllabus Classification Using TF-IDF and Machine Learning</a>
+        <p>Developed a program to classify syllabi as authentic or fake using <strong>TF-IDF vectorization</strong> and <strong>Naive Bayes, Random Forest, and Logistic Regression</strong> classifiers.</p>
+      </div>
+      <div class="project-card">
+        <a href="https://rossl18.github.io/StatsDemo/">Interactive Statistical Theory Demonstrations</a>
+        <p>Designed a website with <strong>interactive visualizations</strong> to help users explore fundamental statistical theories.</p>
+      </div>
+      <div class="project-card">
+        <a href="https://rossl18.github.io/NYCJobs/">Curated Database of NYC Company Career Sites</a>
+        <p>Created a GitHub Pages site listing major NYC companies with direct links to their technology career pages.</p>
+      </div>
+      <div class="project-card">
+        <a href="https://github.com/codingitforward/fellowship2024">Coding it Forward Fellowship: U.S. Census Bureau Project Overview</a>
+        <p>Overview of projects by 2024 Coding it Forward Fellows, including my work at the U.S. Census Bureau (presentation confidential).</p>
+      </div>
+      <div class="project-card">
+        <a href="https://www.linkedin.com/posts/fleishman-career_read-to-learn-howbinghamton-universityalum-activity-7135668537842364416--X0t/?trk=public_profile_like_view">Fleishman Center for Career and Professional Development Interview</a>
+        <p>Interviewed by the Fleishman Center, discussing <strong>networking experiences</strong> and my fellowship at the National Museum of Mathematics.</p>
+      </div>
+      <div class="project-card">
+        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/BasketballAnimations.ipynb" target="_blank">Basketball Analytics: Visualizing the Evolution of the 3-Point Shot</a>
+        <p>Explored basketball statistics and analytics through <strong>engaging visual animations</strong>, illustrating key NBA trends.</p>
+      </div>
+      <div class="project-card">
+        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/main/HPSVM.ipynb" target="_blank">Harry Potter House Classification Using Support Vector Machines</a>
+        <p>Applied <strong>SVMs</strong> to classify Harry Potter houses based on trait data, showcasing practical ML techniques.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="gallery">
-            <figure>
-                <img src="images/p1.png" alt="U.S Census Bureau Seminar">
-                <figcaption>Presenting at the U.S. Census Bureau</figcaption>
-            </figure>
-            <figure>
-                <img src="images/p2.jpg" alt="Poster Presentation, Binghamton University Research Days">
-                <figcaption>Poster Presentation at Binghamton University Research Days</figcaption>
-            </figure>
-            <figure>
-                <video controls>
-                    <source src="images/movie.mp4" type="video/mp4">
-                    <source src="images/movie.webm" type="video/webm">
-                    Your browser does not support the video tag.
-                </video>
-                <figcaption>NBA 3-Point Shot Data Animation</figcaption>
-            </figure>
-        </div>
-    </section>
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery">
+      <figure>
+        <img src="images/p1.png" alt="U.S Census Bureau Seminar">
+        <figcaption>Presenting at the U.S. Census Bureau</figcaption>
+      </figure>
+      <figure>
+        <img src="images/p2.jpg" alt="Poster Presentation, Binghamton University Research Days">
+        <figcaption>Poster Presentation at Binghamton University Research Days</figcaption>
+      </figure>
+      <figure>
+        <video controls>
+          <source src="images/movie.mp4" type="video/mp4">
+          <source src="images/movie.webm" type="video/webm">
+          Your browser does not support the video tag.
+        </video>
+        <figcaption>NBA 3-Point Shot Data Animation</figcaption>
+      </figure>
+    </div>
+  </section>
 </main>
 
 <footer>
-    <p>&copy; 2024 Ross Lauterbach. All rights reserved.</p>
+  <p>&copy; 2024 Ross Lauterbach. All rights reserved.</p>
 </footer>
 
 </body>
