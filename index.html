@@ -99,8 +99,9 @@
       color: #d1eaff;
     }
     .hero .resume-btn {
-      background: #fff; /* Changed: Button background is white by default */
-      color: var(--primary); /* Changed: Text color is primary blue by default */
+      /* Changed for visibility against blue background */
+      background: #6ab7f5; /* A lighter blue */
+      color: #fff; /* White text for contrast */
       display: inline-block;
       margin-top: 18px;
       padding: 10px 28px;
@@ -110,7 +111,7 @@
       text-decoration: none;
       box-shadow: 0 2px 8px rgba(0,0,0,0.10);
       transition: background 0.2s, color 0.2s, transform 0.2s;
-      border: 2px solid var(--primary); /* Added: A border for definition */
+      border: 2px solid #6ab7f5; /* Border matches default background */
     }
     .hero .resume-btn:hover {
       background: var(--primary-dark);
@@ -298,7 +299,7 @@
       <h2>Teaching</h2>
       <div class="card mb-4" style="background: var(--card-bg); border-radius: 8px; box-shadow: var(--shadow); padding: 15px; border: 1px solid var(--border); margin-bottom: 20px;">
           <div class="card-header" style="font-weight: 700; font-size: 1.2em; margin-bottom: 10px; color: var(--primary-dark);">
-              <h4>Fall 2025</h4>
+              <h4>Fall 2025 (Hunter College)</h4>
           </div>
           <ul class="list-group list-group-flush" style="list-style: none; padding: 0; margin: 0;">
               <li class="list-group-item" style="padding: 8px 0; border-bottom: 1px dashed var(--border);">STAT 113: Elementary Statistics</li>
