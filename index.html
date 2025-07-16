@@ -99,23 +99,25 @@
       color: #d1eaff;
     }
     .hero .resume-btn {
-  background: var(--primary);
-  color: #fff;
-  display: inline-block;
-  margin-top: 18px;
-  padding: 10px 28px;
-  border-radius: 24px;
-  font-weight: 700;
-  font-size: 1.1em;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-}
-.hero .resume-btn:hover {
-  background: var(--primary-dark);
-  color: #fff;
-  transform: scale(1.04);
-}
+      background: #fff; /* Changed: Button background is white by default */
+      color: var(--primary); /* Changed: Text color is primary blue by default */
+      display: inline-block;
+      margin-top: 18px;
+      padding: 10px 28px;
+      border-radius: 24px;
+      font-weight: 700;
+      font-size: 1.1em;
+      text-decoration: none;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+      border: 2px solid var(--primary); /* Added: A border for definition */
+    }
+    .hero .resume-btn:hover {
+      background: var(--primary-dark);
+      color: #fff;
+      transform: scale(1.04);
+      border-color: var(--primary-dark); /* Ensure border also changes on hover */
+    }
     main {
       max-width: 1100px;
       margin: 40px auto;
@@ -247,7 +249,7 @@
     <ul>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
+      <li><a href="#teaching">Teaching</a></li> <li><a href="#projects">Projects</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="mailto:rosslauterbach1@gmail.com"><i class="fa-solid fa-envelope"></i></a></li>
       <li><a href="https://www.linkedin.com/in/ross-lauterbach-81ba111b6/" target="_blank"><i class="fab fa-linkedin"></i></a></li>
@@ -292,6 +294,18 @@
     </div>
   </section>
 
+  <section id="teaching">
+      <h2>Teaching</h2>
+      <div class="card mb-4" style="background: var(--card-bg); border-radius: 8px; box-shadow: var(--shadow); padding: 15px; border: 1px solid var(--border); margin-bottom: 20px;">
+          <div class="card-header" style="font-weight: 700; font-size: 1.2em; margin-bottom: 10px; color: var(--primary-dark);">
+              <h4>Fall 2025</h4>
+          </div>
+          <ul class="list-group list-group-flush" style="list-style: none; padding: 0; margin: 0;">
+              <li class="list-group-item" style="padding: 8px 0; border-bottom: 1px dashed var(--border);">STAT 113: Elementary Statistics</li>
+              <li class="list-group-item" style="padding: 8px 0;">STAT 213: Introduction to Applied Statistics</li>
+          </ul>
+      </div>
+  </section>
   <section id="projects">
     <h2>Selected Projects & Research</h2>
     <div class="projects-list">
@@ -312,7 +326,7 @@
         <p>Presented a comprehensive machine learning pipeline for <strong>predictive modeling using NBA player data</strong>, including data cleaning, EDA, model selection, validation, and diagnostics.</p>
       </div>
       <div class="project-card">
-        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/20b4b4219a77586cf76a9ada1d77682e5363df2d/SyllabusClassifier.ipynb">Syllabus Classification Using TF-IDF and Machine Learning</a>
+        <a href="https://nbviewer.org/github/rossl18/rossl18.github.io/blob/20b4b4121a77586cf76a9ada1d77682e5363df2d/SyllabusClassifier.ipynb">Syllabus Classification Using TF-IDF and Machine Learning</a>
         <p>Developed a program to classify syllabi as authentic or fake using <strong>TF-IDF vectorization</strong> and <strong>Naive Bayes, Random Forest, and Logistic Regression</strong> classifiers.</p>
       </div>
       <div class="project-card">
@@ -370,4 +384,4 @@
 </footer>
 
 </body>
-</html> 
+</html>
